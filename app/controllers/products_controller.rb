@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show]
+  before_action :set_product, only: [:show, :edit, :update]
 
   def index
     @products = Product.all
@@ -20,6 +20,16 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit; end 
+
+  def update
+    if @product.update(product_params)
+      redirect_to products_url(@product)
+    else 
+      render :edit, status: :unprocassable_entity
+    end
+  end 
+  
   private 
 
   def set_product

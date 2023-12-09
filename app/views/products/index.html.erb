@@ -5,5 +5,6 @@
   <p>Preço: R$<%= product.price %></p>
   <p>Quantidade: <%= product.quantity %></p>
 
-  <%= link_to 'Ver Produto', product %>
+  <p><%= link_to 'Ver Produto', product %></p>
+  <p><%= link_to 'Editar Produto', edit_product_path(product) %></p>
 <% end %>
